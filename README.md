@@ -5,6 +5,17 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/varxy20k/rogueliketcodtutorial2021/Test)](https://github.com/varxy20k/rogueliketcodtutorial2021/actions/)
 [![Codecov](https://img.shields.io/codecov/c/github/varxy20k/rogueliketcodtutorial2021)](https://codecov.io/gh/varxy20k/rogueliketcodtutorial2021)
 
+## Setup
+
+### pre-commit
+
+Run
+
+```sh
+pre-commit install && pre-commit install --hook-type commit-msg
+```
+
+To install the pre-commit hooks.
 
 ## Credits
 This package was created with Cookiecutter and the [sourcery-ai/python-best-practices-cookiecutter](https://github.com/sourcery-ai/python-best-practices-cookiecutter) project template.
