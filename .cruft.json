@@ -1,0 +1,18 @@
+{
+  "template": "https://github.com/jevandezande/python-best-practices-cookiecutter",
+  "commit": "db78ab3bac02ed738f4f278e5c3f5351708b8788",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "rogueliketcodtutorial2021",
+      "repo_name": "rogueliketcodtutorial2021",
+      "author_name": "Jorge Vargas",
+      "user_name": "varxy20k",
+      "project_url": "git@github.com:varxy20k/rogueliketcodtutorial2021",
+      "line_length": "120",
+      "license": "MIT",
+      "_template": "https://github.com/jevandezande/python-best-practices-cookiecutter"
+    }
+  },
+  "directory": null
+}
