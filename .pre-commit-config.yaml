@@ -1,5 +1,9 @@
 # See https://pre-commit.com/ for usage and config
 repos:
+- repo: https://github.com/jorisroovers/gitlint
+  rev: 'v0.15.1'
+  hooks:
+  - id: gitlint
 - repo: local
   hooks:
   - id: isort
