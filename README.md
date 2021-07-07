@@ -9,13 +9,9 @@
 
 ### pre-commit
 
-Run
+After cloning, run the following to install `pre-commit` hooks:
 
-```sh
-pre-commit install && pre-commit install --hook-type commit-msg
-```
-
-To install the pre-commit hooks.
+`pre-commit install && pre-commit install --hook-type commit-msg`
 
 ## Credits
 This package was created with Cookiecutter and the [sourcery-ai/python-best-practices-cookiecutter](https://github.com/sourcery-ai/python-best-practices-cookiecutter) project template.
