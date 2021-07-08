@@ -62,6 +62,9 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+
       - name: Smoke test docker image
         run: docker run --rm ${{ steps.docker_build.outputs.digest }} 10
 
