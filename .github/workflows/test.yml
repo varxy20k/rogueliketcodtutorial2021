@@ -63,8 +63,7 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
       - name: Smoke test docker image
-        run: |
-          docker run --rm ${{ steps.docker_build.outputs.digest }} 10
+        run: docker run --rm ${{ steps.docker_build.outputs.digest }} 10
 
       - name: Move cache
         # Temp fix
