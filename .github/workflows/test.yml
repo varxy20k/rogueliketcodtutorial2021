@@ -58,6 +58,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
+          load: true
           tags: varxy20k/rogueliketcodtutorial2021:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
@@ -66,7 +67,7 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
       - name: Smoke test docker image
-        run: docker run --rm ${{ steps.docker_build.outputs.digest }} 10
+        run: docker run --rm varxy20k/rogueliketcodtutorial2021:latest 10
 
       - name: Move cache
         # Temp fix
