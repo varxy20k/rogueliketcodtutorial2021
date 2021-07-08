@@ -14,17 +14,10 @@ def test_ev_quit_raises_system_exit() -> None:
         handler.ev_quit(event)
 
 
-def test_ev_keydown_returns_none_if_no_match() -> None:
+@pytest.mark.parametrize("sym, movement", [(0, None), (tcod.event.K_UP, MovementAction(0, -1))])
+def test_ev_keydown_moves_correctly(sym, movement) -> None:
     handler = EventHandler()
 
-    event = tcod.event.KeyDown(0, 0, 0)
+    event = tcod.event.KeyDown(0, sym, 0)
 
-    assert handler.ev_keydown(event) is None
-
-
-def test_ev_keydown_K_UP_moves_up() -> None:
-    handler = EventHandler()
-
-    event = tcod.event.KeyDown(0, tcod.event.K_UP, 0)
-
-    assert handler.ev_keydown(event) == MovementAction(dx=0, dy=-1)
+    assert handler.ev_keydown(event) == movement
