@@ -16,5 +16,9 @@ class EventHandler(tcod.event.EventDispatch[Action]):
             return MovementAction(0, -1)
         if key == tcod.event.K_DOWN:
             return MovementAction(0, 1)
+        if key == tcod.event.K_LEFT:
+            return MovementAction(-1, 0)
+        if key == tcod.event.K_RIGHT:
+            return MovementAction(1, 0)
 
         return None

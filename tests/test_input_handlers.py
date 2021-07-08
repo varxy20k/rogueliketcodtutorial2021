@@ -20,6 +20,8 @@ def test_ev_quit_raises_system_exit() -> None:
         (0, None),
         (tcod.event.K_UP, MovementAction(0, -1)),
         (tcod.event.K_DOWN, MovementAction(0, 1)),
+        (tcod.event.K_LEFT, MovementAction(-1, 0)),
+        (tcod.event.K_RIGHT, MovementAction(1, 0)),
     ],
 )
 def test_ev_keydown_moves_correctly(sym, movement) -> None:
