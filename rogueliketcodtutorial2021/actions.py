@@ -5,6 +5,7 @@ class Action:
     pass
 
 
+@dataclass
 class EscapeAction(Action):
     pass
 

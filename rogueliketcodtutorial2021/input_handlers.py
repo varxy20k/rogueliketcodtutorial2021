@@ -2,7 +2,7 @@ from typing import Optional
 
 import tcod.event
 
-from rogueliketcodtutorial2021.actions import Action, MovementAction
+from rogueliketcodtutorial2021.actions import Action, EscapeAction, MovementAction
 
 
 class EventHandler(tcod.event.EventDispatch[Action]):
@@ -20,5 +20,7 @@ class EventHandler(tcod.event.EventDispatch[Action]):
             return MovementAction(-1, 0)
         if key == tcod.event.K_RIGHT:
             return MovementAction(1, 0)
+        if key == tcod.event.K_ESCAPE:
+            return EscapeAction()
 
         return None
