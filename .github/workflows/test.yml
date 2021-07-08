@@ -3,7 +3,7 @@ name: Test
 on:
   pull_request: {}
   push:
-    branches: master
+    branches: main
     tags: "*"
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           sudo apt-get install libsdl2-dev
 
       - name: Setup Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: 3.9
 
