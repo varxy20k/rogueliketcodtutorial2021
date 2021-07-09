@@ -1,6 +1,8 @@
 [run]
 source = rogueliketcodtutorial2021
-omit = rogueliketcodtutorial2021/__main__.py
+omit =
+    rogueliketcodtutorial2021/__main__.py
+    rogueliketcodtutorial2021/rogueliketcodtutorial2021.py
 
 [report]
 exclude_lines =
