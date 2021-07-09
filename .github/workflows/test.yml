@@ -41,7 +41,6 @@ jobs:
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: pipenv install --deploy --dev
 
-      - name: Run all checks
       - run: pipenv run isort --recursive --diff .
       - run: pipenv run black --check .
       - run: pipenv run flake8
