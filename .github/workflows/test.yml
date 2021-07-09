@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: c-py/action-dotenv-to-setenv@v2
+
       - name: Install OS dependencies
         run: |
           sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu `lsb_release -sc` main universe restricted multiverse"
@@ -23,11 +25,23 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Install dependencies with pipenv
-        run: |
-          pip install pipenv
-          pipenv install --deploy --dev
+      - name: Install pipenv
+        run: pip install pipenv
 
+      - name: Cache Pipenv dependencies
+        uses: actions/cache@v1
+        id: cache-dependencies
+        with:
+          path: ./.venv
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies with pipenv
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: pipenv install --deploy --dev
+
+      - name: Run all checks
       - run: pipenv run isort --recursive --diff .
       - run: pipenv run black --check .
       - run: pipenv run flake8
