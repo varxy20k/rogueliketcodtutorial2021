@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: c-py/action-dotenv-to-setenv@v2
+      - uses: c-py/action-dotenv-to-setenv@v3
 
       - name: Install OS dependencies
         run: |
